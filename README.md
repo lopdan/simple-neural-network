@@ -1,6 +1,6 @@
 # Simple neural network
 
-This is a simple neural network that tells the gender given weight and height. This project was made for education purposes.
+This is a simple neural network that tells the gender given weight and height. The project was made for learning purposes.
 
 ## Training Plot
 
