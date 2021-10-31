@@ -1,5 +1,6 @@
 import numpy as np
 from neural_network import NeuralNetwork
+from plot import Plot
 
 
 data = np.array([
@@ -20,8 +21,10 @@ all_y_trues = np.array([
 ])
 
 def main():
-	network = NeuralNetwork()
-	network.train(data, all_y_trues)
+  network = NeuralNetwork()
+  network.train(data, all_y_trues)
+  plot = Plot()
+  plot.print_plot(network.list_loss, network.list_epoch)
  
 if __name__ == "__main__":
-	main()
+  main()

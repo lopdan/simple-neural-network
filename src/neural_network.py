@@ -36,6 +36,10 @@ class NeuralNetwork:
     self.b1 = np.random.normal()
     self.b2 = np.random.normal()
     self.b3 = np.random.normal()
+    
+    self.list_epoch = []
+    self.list_loss = []
+    
 
   """Calculates the output of the neural network
   Returns:
@@ -54,12 +58,12 @@ class NeuralNetwork:
     - all_y_trues is a numpy array with n elements.
       Elements in all_y_trues correspond to those in data.
     """
-    learn_rate = 0.05
+    learn_rate = 0.01
     epochs = 2000 # number of times to loop through the entire dataset
 
     for epoch in range(epochs):
       for x, y_true in zip(data, all_y_trues):
-        # Do a feedforward (we'll need these values later)
+        # Do a feedforward
         sum_h1 = self.w1 * x[0] + self.w2 * x[1] + self.b1
         h1 = sigmoid(sum_h1)
 
@@ -111,4 +115,6 @@ class NeuralNetwork:
       if epoch % 10 == 0:
         y_preds = np.apply_along_axis(self.feedforward, 1, data)
         loss = mse_loss(all_y_trues, y_preds)
+        self.list_loss.append(loss)
+        self.list_epoch.append(epoch)
         print("Epoch %d loss: %.3f" % (epoch, loss))
