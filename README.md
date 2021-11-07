@@ -4,7 +4,7 @@ This is a simple neural network that tells the gender given weight and height. T
 
 ## Training Plot
 
-High learn rate            |  Lower learn rate
+High learn rate            |  Low learn rate
 :-------------------------:|:-------------------------:
 ![](images/Figure_1.png) | ![](images/Figure_2.png)
 
